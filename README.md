@@ -1,4 +1,10 @@
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## About My Website
+
+This is the personal website of Matt Kikuchi. Currently a Software Developer at Diebold Nixdorf working on their 
+banking and payments application.
 
 ## Getting Started
 

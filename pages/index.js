@@ -10,14 +10,15 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <a href="">Matt Kikuchi</a>
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Software Engineer at Diebold Nixdorf
         </p>
+        {/* <code>pages/index.js</code> */}
 
-        <div className="grid">
+        {/* <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
@@ -45,7 +46,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer>
@@ -117,6 +118,9 @@ export default function Home() {
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+          Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          sans-serif;
         }
 
         .title,
