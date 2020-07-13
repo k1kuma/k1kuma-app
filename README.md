@@ -1,6 +1,15 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## TODO
+
+* work on social media widgets with hovering/color on hover.
+* about me profile text (use markdown tutorial from Next.js tutorial)
+* blog section
+* portfolio section
+* contact section
+* BLM section
+
 ## About My Website
 
 This is the personal website of Matt Kikuchi. Currently a Software Developer at Diebold Nixdorf working on their 
