@@ -8,7 +8,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 * blog section
 * portfolio section
 * contact section
-* BLM section
+* Add BLM widget section
 
 ## About My Website
 

@@ -16,6 +16,7 @@ export default function Home() {
         <p className="description">
           Software Engineer at Diebold Nixdorf
         </p>
+
         {/* <code>pages/index.js</code> */}
 
         {/* <div className="grid">
