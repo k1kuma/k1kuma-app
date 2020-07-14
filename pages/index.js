@@ -1,4 +1,15 @@
 import Head from 'next/head'
+import useScript from './hooks/useScript';
+
+const blackLivesMatter = props => {
+  useScript('https://makerbadge.s3.amazonaws.com/blmbadge.js');
+}
+
+// // This function gets called at build time
+// export async function getStaticProps() {
+//   blackLivesMatter();
+//   return;
+// }
 
 export default function Home() {
   return (
@@ -9,6 +20,7 @@ export default function Home() {
       </Head>
 
       <main>
+        {/* <blackLivesMatter url="hello"></blackLivesMatter> */}
         <h1 className="title">
           <a href="">Matt Kikuchi</a>
         </h1>
