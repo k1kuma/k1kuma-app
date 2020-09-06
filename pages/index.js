@@ -1,39 +1,44 @@
 import Head from 'next/head'
-import useScript from './hooks/useScript';
-
-const blackLivesMatter = props => {
-  useScript('https://makerbadge.s3.amazonaws.com/blmbadge.js');
-}
-
-// // This function gets called at build time
-// export async function getStaticProps() {
-//   blackLivesMatter();
-//   return;
-// }
+import Layout from '../components/Layout'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Matt Kikuchi</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Layout>WHATABYTE</Layout>;
       <main>
-        {/* <blackLivesMatter url="hello"></blackLivesMatter> */}
+
+        <p className="description">
+          Hello, I am
+        </p>
+
         <h1 className="title">
           <a href="">Matt Kikuchi</a>
         </h1>
 
         <p className="description">
-          Software Engineer at Diebold Nixdorf
+          Software Engineer in Toronto, Canada
         </p>
 
-        <p className="description">
-          Thanks for visiting!
+        {/* <p className="description-left"> */}
+        <p className="code">
+          Born and grew up in London, Ontario, Canada from Japanese parents.
+          <br/>
+          <br/>
+          Graduated from the University of Western Ontario in Computer Science back in 2013 (yes I'm, old).
+          <br/>
+          <br/>
+          Looking to improve webDev skills and pursue new projects!
+        </p>
+        <p className="code">
+          companies but also 
         </p>
 
-        {/* <code>pages/index.js</code> */}
+        <code>pages/index.js</code>
 
         {/* <div className="grid">
           <a href="https://nextjs.org/docs" className="card">
@@ -148,6 +153,13 @@ export default function Home() {
         .description {
           line-height: 1.5;
           font-size: 1.5rem;
+        }
+
+        .description-left {
+          line-height: 1.5;
+          font-size: 1.5rem;
+          text-align: left;
+          padding: 3.00rem;
         }
 
         code {
