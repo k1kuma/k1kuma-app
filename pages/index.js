@@ -26,10 +26,10 @@ export default function Home() {
 
         {/* <p className="description-left"> */}
         <p className="code">
-          Born and grew up in London, Ontario, Canada from Japanese parents.
+          Born and raised in Canada
           <br/>
           <br/>
-          Graduated from the University of Western Ontario in Computer Science back in 2013 (yes I'm, old).
+          Studied Computer Science at University of Western Ontario
           <br/>
           <br/>
           Looking to improve webDev skills and pursue new projects!
