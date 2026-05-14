@@ -1,45 +1,170 @@
+# Personal Brand Site - AI Chat Edition
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A modern personal brand website featuring an AI-powered chat interface that answers questions about your professional experience, built with Next.js 14 and a terminal-inspired aesthetic.
 
-## TODO
+## 🚀 Features
 
-* work on social media widgets with hovering/color on hover.
-* about me profile text (use markdown tutorial from Next.js tutorial)
-* blog section
-* portfolio section
-* contact section
-* Add BLM widget section
+- **AI Chat Interface**: Visitors can ask questions about your experience, projects, and skills
+- **Terminal Aesthetic**: Clean, developer-focused design with monospace fonts and terminal styling
+- **Restricted AI**: LLM is limited to only answering questions about you (no off-topic responses)
+- **Modern Stack**: Next.js 14, Tailwind CSS, Framer Motion
+- **Fully Responsive**: Works perfectly on mobile and desktop
 
-## About My Website
+## 🛠️ Tech Stack
 
-This is the personal website of Matt Kikuchi. Currently a Software Developer at Diebold Nixdorf working on their 
-banking and payments application.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom terminal theme
+- **Animation**: Framer Motion
+- **AI**: OpenAI GPT-4o-mini (via API)
+- **Font**: JetBrains Mono (Google Fonts)
+- **Deployment**: Vercel (recommended)
 
-## Getting Started
+## 📋 Setup Instructions
 
-First, run the development server:
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```bash
+cp .env.local.example .env.local
+```
+
+Then add your OpenAI API key:
+
+```
+OPENAI_API_KEY=your_openai_api_key_here
+```
+
+Get your API key from: [OpenAI API Keys](https://platform.openai.com/api-keys)
+
+### 3. Customize Your Content
+
+#### Update Knowledge Base
+Edit `/app/api/chat/knowledge.ts` to include your information:
+- Work experience
+- Technical skills
+- Projects
+- Contact information
+- Personal story
+
+#### Update About Page
+Edit `/app/about/page.tsx` to match your narrative and experience.
+
+#### Update Portfolio
+Edit `/app/portfolio/page.tsx` to showcase your projects.
+
+#### Update Social Links
+Update GitHub/LinkedIn URLs in:
+- `/components/TopBar.tsx`
+- `/app/about/page.tsx`
+
+### 4. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see your site.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### 5. Deploy
 
-## Learn More
+The easiest way to deploy is with [Vercel](https://vercel.com):
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install -g vercel
+vercel
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Don't forget to add your `OPENAI_API_KEY` environment variable in the Vercel dashboard.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 💰 Cost Estimates
 
-## Deploy on Vercel
+Using GPT-4o-mini, typical costs are extremely low:
+- **Per conversation**: $0.01 - $0.10
+- **100 conversations/month**: ~$5-10
+- **1000 conversations/month**: ~$50-100
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The AI is configured to keep responses concise (max 500 tokens) to minimize costs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🎨 Customization
+
+### Change Colors
+Edit the terminal color scheme in `tailwind.config.js`:
+
+```js
+colors: {
+  terminal: {
+    bg: '#0a0e14',      // Background
+    text: '#b3b1ad',    // Text
+    green: '#00ff41',   // Primary accent
+    cyan: '#00e5ff',    // Secondary accent
+    // ... more colors
+  },
+}
+```
+
+### Change Font
+Replace JetBrains Mono in `/app/layout.tsx`:
+
+```js
+import { Fira_Code } from 'next/font/google'
+const firaCode = Fira_Code({ subsets: ['latin'] })
+```
+
+### Add Blog Section
+Create `/app/blog/page.tsx` and add the route to TopBar navigation.
+
+## 🔒 AI Safety Features
+
+The chat API includes multiple safeguards:
+- Strict system prompt that refuses off-topic questions
+- Only references your knowledge base content
+- Graceful error handling
+- Rate limiting ready (add if needed)
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── layout.tsx          # Root layout with TopBar
+│   ├── page.tsx            # Home page with chat
+│   ├── globals.css         # Global styles
+│   ├── about/
+│   │   └── page.tsx        # About page
+│   ├── portfolio/
+│   │   └── page.tsx        # Portfolio page
+│   └── api/
+│       └── chat/
+│           ├── route.ts    # Chat API endpoint
+│           └── knowledge.ts # Your information
+├── components/
+│   ├── TopBar.tsx          # Navigation bar
+│   └── ChatInterface.tsx   # Main chat UI
+└── public/                 # Static assets
+```
+
+## 🚧 TODO
+
+- [ ] Fill out knowledge base with your information ([app/api/chat/knowledge.ts](app/api/chat/knowledge.ts))
+- [ ] Update About page content ([app/about/page.tsx](app/about/page.tsx))
+- [ ] Add real projects to Portfolio ([app/portfolio/page.tsx](app/portfolio/page.tsx))
+- [ ] Add your actual social media links
+- [ ] Get OpenAI API key
+- [ ] Deploy to production
+- [ ] (Optional) Add analytics
+- [ ] (Optional) Add blog section
+
+## 📝 License
+
+MIT License - feel free to use this as a template for your own site!
+
+---
+
+Built with ❤️ using Next.js and AI
