@@ -1,3 +1,5 @@
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+
 export default function About() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
@@ -99,19 +101,21 @@ export default function About() {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a
-            href="https://github.com/mattkikuchi"
+            href="https://github.com/k1kuma"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 border border-terminal-green/50 text-terminal-green rounded hover:bg-terminal-green/10 transition-colors"
+            className="px-6 py-2 border border-terminal-green/50 text-terminal-green rounded hover:bg-terminal-green/10 transition-colors inline-flex items-center gap-2"
           >
+            <FaGithub className="w-4 h-4" />
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/mattkikuchi"
+            href="https://www.linkedin.com/in/mattkikuchi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2 border border-terminal-cyan/50 text-terminal-cyan rounded hover:bg-terminal-cyan/10 transition-colors"
+            className="px-6 py-2 border border-terminal-cyan/50 text-terminal-cyan rounded hover:bg-terminal-cyan/10 transition-colors inline-flex items-center gap-2"
           >
+            <FaLinkedin className="w-4 h-4" />
             LinkedIn
           </a>
         </div>

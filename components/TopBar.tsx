@@ -1,7 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 interface NavItem {
   name: string
@@ -22,9 +24,19 @@ export default function TopBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <span className="text-terminal-green text-xl">$</span>
-            <span className="text-terminal-text font-bold hover:text-terminal-green transition-colors">
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative w-8 h-8 flex-shrink-0">
+              <Image 
+                src="/logo.png" 
+                alt="k1kuma logo" 
+                fill
+                sizes="32px"
+                className="object-contain"
+                priority
+                unoptimized
+              />
+            </div>
+            <span className="text-terminal-text font-bold hover:text-terminal-accent transition-colors">
               matt.kikuchi
             </span>
           </Link>
@@ -50,22 +62,24 @@ export default function TopBar() {
           </div>
 
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <a
-              href="https://github.com/mattkikuchi"
+              href="https://github.com/k1kuma"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-green transition-colors text-sm"
+              className="text-terminal-text/70 hover:text-terminal-accent transition-colors"
+              aria-label="GitHub"
             >
-              GitHub
+              <FaGithub className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/in/mattkikuchi"
+              href="https://www.linkedin.com/in/mattkikuchi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-green transition-colors text-sm"
+              className="text-terminal-text/70 hover:text-terminal-accent transition-colors"
+              aria-label="LinkedIn"
             >
-              LinkedIn
+              <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
         </div>

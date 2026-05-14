@@ -10,13 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         terminal: {
-          bg: '#0a0e14',
+          bg: '#000000',
           text: '#b3b1ad',
-          green: '#00ff41',
-          cyan: '#00e5ff',
-          blue: '#5ccfe6',
-          purple: '#baa0f8',
-          yellow: '#ffb454',
+          green: '#C9B896', // Primary - matches k1kuma logo
+          cyan: '#D4C5B0', // Secondary beige
+          blue: '#B8A88A',
+          purple: '#A69478',
+          yellow: '#E6D5B8',
+          accent: '#C9B896', // k1kuma brand color
         },
       },
       fontFamily: {

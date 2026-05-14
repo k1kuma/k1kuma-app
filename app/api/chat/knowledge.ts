@@ -49,8 +49,8 @@ export const knowledgeBase = `
 - **Not Looking For**: Traditional full-time job offers (currently employed)
 
 ## Contact Information
-- **GitHub**: github.com/mattkikuchi [Verify this is correct]
-- **LinkedIn**: linkedin.com/in/mattkikuchi [Verify this is correct]
+- **GitHub**: https://github.com/k1kuma
+- **LinkedIn**: https://www.linkedin.com/in/mattkikuchi/
 - **Email**: [TO BE FILLED]
 - **Location**: Toronto, Canada
 
