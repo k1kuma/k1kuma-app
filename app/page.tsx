@@ -8,7 +8,7 @@ export default function Home() {
       <div className="w-full max-w-4xl">
         <div className="mb-8 text-center space-y-2">
           <h1 className="text-3xl md:text-4xl font-bold text-terminal-green mb-2">
-            $ whoami
+            Matt Kikuchi
           </h1>
           <p className="text-terminal-text/80 text-sm md:text-base">
             Chat with an AI about Matt Kikuchi&apos;s experience, projects, and interests

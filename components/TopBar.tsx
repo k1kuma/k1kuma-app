@@ -37,7 +37,7 @@ export default function TopBar() {
               />
             </div>
             <span className="text-terminal-text font-bold hover:text-terminal-accent transition-colors">
-              matt.kikuchi
+              k1kuma
             </span>
           </Link>
 
