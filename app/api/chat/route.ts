@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server'
-import OpenAI from 'openai'
+import Groq from 'groq-sdk'
 import { knowledgeBase } from './knowledge'
 
-// Initialize OpenAI client
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+// Initialize Groq client
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY,
 })
 
 // System prompt with strict restrictions
@@ -18,6 +18,7 @@ STRICT RULES:
 5. Keep responses concise (2-4 sentences unless more detail is requested)
 6. Never make up information - only use what's in the knowledge base
 7. Don't provide advice or opinions - just share facts about Matt
+8. When referencing websites, profiles, or projects, include the full URLs from the knowledge base (they will be automatically converted to clickable links)
 
 KNOWLEDGE BASE:
 ${knowledgeBase}
@@ -38,7 +39,7 @@ export async function POST(req: Request) {
     const body: RequestBody = await req.json()
     const { messages } = body
 
-    if (!process.env.OPENAI_API_KEY) {
+    if (!process.env.GROQ_API_KEY) {
       return NextResponse.json(
         { 
           message: "Chat is currently unavailable. Please reach out to Matt directly via GitHub or LinkedIn." 
@@ -47,9 +48,9 @@ export async function POST(req: Request) {
       )
     }
 
-    // Call OpenAI API
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini', // Cost-effective model
+    // Call Groq API
+    const completion = await groq.chat.completions.create({
+      model: 'llama-3.1-8b-instant', // Fastest model
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
         ...messages.map(msg => ({

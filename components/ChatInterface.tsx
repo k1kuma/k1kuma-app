@@ -8,6 +8,36 @@ interface Message {
   content: string
 }
 
+// Component to render message content with clickable links
+function MessageContent({ content }: { content: string }) {
+  // Regex to match URLs
+  const urlRegex = /(https?:\/\/[^\s]+)/g
+  
+  const parts = content.split(urlRegex)
+  
+  return (
+    <>
+      {parts.map((part, index) => {
+        // Check if this part is a URL
+        if (part.match(urlRegex)) {
+          return (
+            <a
+              key={index}
+              href={part}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-terminal-accent underline hover:text-terminal-green transition-colors"
+            >
+              {part}
+            </a>
+          )
+        }
+        return <span key={index}>{part}</span>
+      })}
+    </>
+  )
+}
+
 export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -103,7 +133,7 @@ export default function ChatInterface() {
                   <span className="text-terminal-cyan text-xs font-bold">AI:</span>
                 )}
                 <p className="text-sm mt-1 whitespace-pre-wrap leading-relaxed">
-                  {message.content}
+                  <MessageContent content={message.content} />
                 </p>
               </div>
             </motion.div>

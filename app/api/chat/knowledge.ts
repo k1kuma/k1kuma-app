@@ -25,42 +25,45 @@ export const knowledgeBase = `
 ## Professional Identity
 - **What I Stand For**: "Building solutions to complex problems in the FinTech and web3 space"
 - **Approach**: Solving complex technical challenges with data-driven solutions
-- **Interests**: Financial infrastructure, blockchain technology, data analytics
+- **Interests**: Financial infrastructure, data analytics, blockchain technology
 
 ## Previous Experience
-- **Diebold Nixdorf**: Software Developer working on banking and payments applications
-- [NOTE: Add more companies/roles as you share them]
+- **Phoenix Interactive**: Software Developer working on banking applications
+- **Diebold Nixdorf**: Software Developer working on banking, payments and self-service applications
+- **TripStack**: Software Developer working on web-scraping applications for black-box online travel agencies
+- ** Definity Financial**: Software Developer working on home/auto/pet insurance application
 
 ## Technical Skills
-- **Languages**: [TO BE FILLED - e.g., JavaScript, Python, etc.]
-- **Frameworks**: [TO BE FILLED - e.g., React, Next.js, etc.]
+- **Languages**: Javascript, Typescript, Python, C#, Ruby
+- **Frameworks**: React, Next.js, Angular
 - **Domains**: FinTech, Web3, Data Engineering, Backend Systems
-- **Tools**: [TO BE FILLED]
+- **Tools**: Claude, Codex
 
 ## Notable Projects
-[TO BE FILLED - Add 2-3 standout projects you want to highlight]
-- Project 1: [Description]
-- Project 2: [Description]
+- Project 1: TrackInsight ETF Portfolio Simulator
+- Project 2: 
 - Project 3: [Description]
 
 ## Collaboration & Interests
 - **Open to**: Partnerships and collaborations
-- **Particularly Interested In**: [TO BE FILLED - specific types of projects/partnerships]
+- **Particularly Interested In**: FinTech, Web3, Data Engineering projects
 - **Not Looking For**: Traditional full-time job offers (currently employed)
 
 ## Contact Information
 - **GitHub**: https://github.com/k1kuma
 - **LinkedIn**: https://www.linkedin.com/in/mattkikuchi/
-- **Email**: [TO BE FILLED]
+- **Email**: mkiku36@gmail.com
 - **Location**: Toronto, Canada
+- **Instagram**: kiku.mata
 
 ## Personal Interests
-- Gaming (original spark for programming)
-- Sports & Statistics
-- [TO BE FILLED - other hobbies/interests]
+- Gaming
+- Golf
+- Baseball
+- Baseball analytics/statistics
 
 ## Achievements & Recognition
-[TO BE FILLED - Add any notable achievements, awards, open source contributions, etc.]
+- unfortunately not notable achievements since high school (international business award grade 12)
 
 ---
 INSTRUCTIONS FOR UPDATING:
