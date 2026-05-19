@@ -2,39 +2,92 @@
 
 import { useState, useRef, useEffect, FormEvent } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 interface Message {
   role: 'user' | 'assistant'
   content: string
 }
 
-// Component to render message content with clickable links
+// Component to render message content with markdown support
 function MessageContent({ content }: { content: string }) {
-  // Regex to match URLs
-  const urlRegex = /(https?:\/\/[^\s]+)/g
-  
-  const parts = content.split(urlRegex)
-  
   return (
-    <>
-      {parts.map((part, index) => {
-        // Check if this part is a URL
-        if (part.match(urlRegex)) {
-          return (
-            <a
-              key={index}
-              href={part}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-terminal-accent underline hover:text-terminal-green transition-colors"
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      components={{
+        // Custom link styling
+        a: ({ node, ...props }) => (
+          <a
+            {...props}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-terminal-accent underline hover:text-terminal-green transition-colors"
+          />
+        ),
+        // Custom code block styling
+        code: ({ node, className, children, ...props }) => {
+          const inline = !className
+          return inline ? (
+            <code
+              {...props}
+              className="bg-terminal-green/10 text-terminal-green px-1 py-0.5 rounded text-xs"
             >
-              {part}
-            </a>
+              {children}
+            </code>
+          ) : (
+            <code
+              {...props}
+              className="block bg-terminal-bg/50 border border-terminal-green/20 text-terminal-text p-2 rounded text-xs overflow-x-auto"
+            >
+              {children}
+            </code>
           )
-        }
-        return <span key={index}>{part}</span>
-      })}
-    </>
+        },
+        // Custom list styling
+        ul: ({ node, ...props }) => (
+          <ul {...props} className="list-disc list-inside space-y-1 my-2" />
+        ),
+        ol: ({ node, ...props }) => (
+          <ol {...props} className="list-decimal list-inside space-y-1 my-2" />
+        ),
+        // Custom heading styling
+        h1: ({ node, ...props }) => (
+          <h1 {...props} className="text-lg font-bold text-terminal-green mt-3 mb-2" />
+        ),
+        h2: ({ node, ...props }) => (
+          <h2 {...props} className="text-base font-bold text-terminal-green mt-2 mb-1" />
+        ),
+        h3: ({ node, ...props }) => (
+          <h3 {...props} className="text-sm font-bold text-terminal-cyan mt-2 mb-1" />
+        ),
+        // Custom paragraph styling
+        p: ({ node, ...props }) => (
+          <div {...props} className="my-1" />
+        ),
+        // Custom blockquote styling
+        blockquote: ({ node, ...props }) => (
+          <blockquote
+            {...props}
+            className="border-l-2 border-terminal-green/50 pl-3 italic text-terminal-text/80 my-2"
+          />
+        ),
+        // Custom table styling
+        table: ({ node, ...props }) => (
+          <div className="overflow-x-auto my-2">
+            <table {...props} className="border border-terminal-green/20 text-xs" />
+          </div>
+        ),
+        th: ({ node, ...props }) => (
+          <th {...props} className="border border-terminal-green/20 px-2 py-1 bg-terminal-green/10" />
+        ),
+        td: ({ node, ...props }) => (
+          <td {...props} className="border border-terminal-green/20 px-2 py-1" />
+        ),
+      }}
+    >
+      {content}
+    </ReactMarkdown>
   )
 }
 
@@ -132,9 +185,9 @@ export default function ChatInterface() {
                 {message.role === 'assistant' && (
                   <span className="text-terminal-cyan text-xs font-bold">AI:</span>
                 )}
-                <p className="text-sm mt-1 whitespace-pre-wrap leading-relaxed">
+                <div className="text-sm mt-1 whitespace-pre-wrap leading-relaxed">
                   <MessageContent content={message.content} />
-                </p>
+                </div>
               </div>
             </motion.div>
           ))}
