@@ -2,11 +2,6 @@ import { NextResponse } from 'next/server'
 import Groq from 'groq-sdk'
 import { knowledgeBase } from './knowledge'
 
-// Initialize Groq client
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-})
-
 // System prompt with strict restrictions
 const SYSTEM_PROMPT = `You are an AI assistant on Matt Kikuchi's personal website. Your ONLY purpose is to answer questions about Matt Kikuchi based on the knowledge base provided below.
 
@@ -59,6 +54,11 @@ export async function POST(req: Request) {
         { status: 500 }
       )
     }
+
+    // Initialize Groq client at runtime
+    const groq = new Groq({
+      apiKey: process.env.GROQ_API_KEY
+    })
 
     // Call Groq API
     const completion = await groq.chat.completions.create({
