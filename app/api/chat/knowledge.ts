@@ -183,10 +183,9 @@ Matt is a detail-oriented engineer who focuses on:
 - **Instagram:** kiku.mata
 
 ## Personal Interests
-- Gaming (original spark for programming interest)
 - Golf
 - Baseball and baseball statistics/analytics
-- Sports data analysis
+- Gaming (original spark for programming interest)
 
 ## Career Timeline
 - **2011-2013:** Started as intern at BGL Group (marketing software)
