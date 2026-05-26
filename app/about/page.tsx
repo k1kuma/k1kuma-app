@@ -147,32 +147,15 @@ export default function About() {
           <div className="border border-terminal-green/30 rounded-lg p-4 bg-terminal-bg/30">
             <h3 className="text-terminal-green text-sm font-bold mb-3">Cloud & Tools</h3>
             <ul className="space-y-1 text-sm text-terminal-text/80">
-          Interests */}
-      <section className="mb-16">
-        <h2 className="text-terminal-cyan text-xl font-bold mb-6">// Beyond Code</h2>
-        <div className="border border-terminal-green/30 rounded-lg p-6 bg-terminal-bg/50">
-          <p className="text-terminal-text/80 text-sm leading-relaxed">
-            When I'm not coding, you'll find me on the golf course, diving deep into baseball statistics and analytics, 
-            or gaming—the hobby that first sparked my interest in programming. Based in <span className="text-terminal-yellow">Toronto, Ontario</span>.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="border border-terminal-green/30 rounded-lg p-8 bg-terminal-green/5 text-center">
-        <h2 className="text-terminal-green text-xl font-bold mb-4">
-          $ lets-collaborate.sh
-        </h2>
-        <p className="text-terminal-text/80 mb-6">
-          Interested in collaborating or want to learn more? Let's connect.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="mailto:mkiku36@gmail.com"
-            className="px-6 py-2 border border-terminal-yellow/50 text-terminal-yellow rounded hover:bg-terminal-yellow/10 transition-colors"
-          >
-            Email
-          </aext/80">
+              <li>• AWS (Lambda, DynamoDB)</li>
+              <li>• Terraform / IaC</li>
+              <li>• AI Tools (Claude, Copilot)</li>
+              <li>• AGILE / CI/CD</li>
+            </ul>
+          </div>
+          <div className="border border-terminal-green/30 rounded-lg p-4 bg-terminal-bg/30">
+            <h3 className="text-terminal-green text-sm font-bold mb-3">Domain Expertise</h3>
+            <ul className="space-y-1 text-sm text-terminal-text/80">
               <li>• FinTech & ETF Analytics</li>
               <li>• Banking & Payments</li>
               <li>• Insurance Technology</li>
@@ -200,15 +183,32 @@ export default function About() {
         </div>
       </section>
 
+      {/* Interests */}
+      <section className="mb-16">
+        <h2 className="text-terminal-cyan text-xl font-bold mb-6">// Beyond Code</h2>
+        <div className="border border-terminal-green/30 rounded-lg p-6 bg-terminal-bg/50">
+          <p className="text-terminal-text/80 text-sm leading-relaxed">
+            When I'm not coding, you'll find me on the golf course, diving deep into baseball statistics and analytics, 
+            or gaming—the hobby that first sparked my interest in programming. Based in <span className="text-terminal-yellow">Toronto, Ontario</span>.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="border border-terminal-green/30 rounded-lg p-8 bg-terminal-green/5 text-center">
         <h2 className="text-terminal-green text-xl font-bold mb-4">
           $ lets-collaborate.sh
         </h2>
         <p className="text-terminal-text/80 mb-6">
-          Interested in collaborating on a project? Let's connect.
+          Interested in collaborating or want to learn more? Let's connect.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
+          <a
+            href="mailto:mkiku36@gmail.com"
+            className="px-6 py-2 border border-terminal-yellow/50 text-terminal-yellow rounded hover:bg-terminal-yellow/10 transition-colors"
+          >
+            Email
+          </a>
           <a
             href="https://github.com/k1kuma"
             target="_blank"
