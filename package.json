@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "ai": "^3.1.12",
+    "dompurify": "^3.4.8",
     "framer-motion": "^11.2.4",
     "groq-sdk": "^1.2.0",
+    "isomorphic-dompurify": "^3.15.0",
     "next": "^16.2.6",
     "openai": "^4.47.1",
     "react": "18.3.1",
@@ -25,6 +27,7 @@
     "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
+    "@types/dompurify": "^3.0.5",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
