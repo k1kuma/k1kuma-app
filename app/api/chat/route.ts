@@ -2,6 +2,13 @@ import { NextResponse } from 'next/server'
 import Groq from 'groq-sdk'
 import { knowledgeBase } from './knowledge'
 
+// Configuration
+const RATE_LIMIT_WINDOW = 60 * 1000 // 1 minute
+const RATE_LIMIT_MAX_REQUESTS = 10 // 10 requests per minute
+const MAX_MESSAGE_LENGTH = 1000 // characters
+const MAX_CONVERSATION_DEPTH = 20 // total messages
+const MAX_HISTORY_SENT = 10 // only send last 10 messages to API
+
 // System prompt with strict restrictions
 const SYSTEM_PROMPT = `You are an AI assistant on Matt Kikuchi's personal website. Your ONLY purpose is to answer questions about Matt Kikuchi based on the knowledge base provided below.
 
@@ -41,10 +48,105 @@ interface RequestBody {
   messages: Message[]
 }
 
+// Simple in-memory rate limiting (resets on server restart)
+// For production, consider using Redis or a proper rate limiting service
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>()
+
+function getRateLimitKey(req: Request): string {
+  // Try to get real IP from common headers (for proxy/load balancer scenarios)
+  const forwarded = req.headers.get('x-forwarded-for')
+  const realIp = req.headers.get('x-real-ip')
+  
+  if (forwarded) {
+    return forwarded.split(',')[0].trim()
+  }
+  if (realIp) {
+    return realIp
+  }
+  
+  // Fallback to a generic key if IP can't be determined
+  return 'unknown'
+}
+
+function checkRateLimit(key: string): boolean {
+  const now = Date.now()
+  const record = rateLimitMap.get(key)
+
+  if (!record || now > record.resetTime) {
+    // New window, reset counter
+    rateLimitMap.set(key, {
+      count: 1,
+      resetTime: now + RATE_LIMIT_WINDOW,
+    })
+    return true
+  }
+
+  if (record.count >= RATE_LIMIT_MAX_REQUESTS) {
+    return false // Rate limit exceeded
+  }
+
+  // Increment counter
+  record.count++
+  return true
+}
+
+// Cleanup old entries periodically (every 5 minutes)
+setInterval(() => {
+  const now = Date.now()
+  for (const [key, record] of rateLimitMap.entries()) {
+    if (now > record.resetTime) {
+      rateLimitMap.delete(key)
+    }
+  }
+}, 5 * 60 * 1000)
+
 export async function POST(req: Request) {
   try {
+    // Rate limiting check
+    const rateLimitKey = getRateLimitKey(req)
+    if (!checkRateLimit(rateLimitKey)) {
+      return NextResponse.json(
+        { 
+          message: "Too many requests. Please wait a moment before trying again." 
+        },
+        { status: 429 }
+      )
+    }
+
     const body: RequestBody = await req.json()
     const { messages } = body
+
+    // Input validation
+    if (!messages || !Array.isArray(messages)) {
+      return NextResponse.json(
+        { message: "Invalid request format." },
+        { status: 400 }
+      )
+    }
+
+    if (messages.length > MAX_CONVERSATION_DEPTH) {
+      return NextResponse.json(
+        { message: "Conversation too long. Please start a new conversation." },
+        { status: 400 }
+      )
+    }
+
+    // Validate individual messages
+    for (const msg of messages) {
+      if (!msg.content || typeof msg.content !== 'string') {
+        return NextResponse.json(
+          { message: "Invalid message format." },
+          { status: 400 }
+        )
+      }
+      
+      if (msg.content.length > MAX_MESSAGE_LENGTH) {
+        return NextResponse.json(
+          { message: "Message too long. Please keep messages under 1000 characters." },
+          { status: 400 }
+        )
+      }
+    }
 
     if (!process.env.GROQ_API_KEY) {
       return NextResponse.json(
@@ -54,6 +156,9 @@ export async function POST(req: Request) {
         { status: 500 }
       )
     }
+
+    // Limit conversation history sent to API (keeps costs down and context focused)
+    const recentMessages = messages.slice(-MAX_HISTORY_SENT)
 
     // Initialize Groq client at runtime
     const groq = new Groq({
@@ -65,7 +170,7 @@ export async function POST(req: Request) {
       model: 'llama-3.1-8b-instant', // Fastest model
       messages: [
         { role: 'system', content: SYSTEM_PROMPT },
-        ...messages.map(msg => ({
+        ...recentMessages.map(msg => ({
           role: msg.role,
           content: msg.content,
         })),
