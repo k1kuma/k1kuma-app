@@ -6,7 +6,7 @@ export default function About() {
       {/* Terminal Header */}
       <div className="mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-terminal-green mb-2">
-          $ cat about.md
+          About
         </h1>
         <div className="h-0.5 w-24 bg-terminal-green/50"></div>
       </div>
@@ -197,7 +197,7 @@ export default function About() {
       {/* CTA */}
       <section className="border border-terminal-green/30 rounded-lg p-8 bg-terminal-green/5 text-center">
         <h2 className="text-terminal-green text-xl font-bold mb-4">
-          $ lets-collaborate.sh
+          Lets collaborate
         </h2>
         <p className="text-terminal-text/80 mb-6">
           Interested in collaborating or want to learn more? Let's connect.

@@ -37,30 +37,6 @@ export default function Portfolio() {
       impact: 'Significant new revenue streams',
     },
     {
-      id: 4,
-      title: 'ATM Transaction Optimization',
-      description: 'Implemented features for hardware and software pre-authorization including offline PIN entry and NFC card input, dramatically reducing transaction times at Diebold Nixdorf.',
-      tech: ['AngularJS', 'C++', 'C#', 'Node.js'],
-      status: 'Completed',
-      impact: '50% reduction in transaction time (60s → 30-45s)',
-    },
-    {
-      id: 5,
-      title: 'Web Scraping Platform',
-      description: 'Led end-to-end design of a scalable web-scraping application at TripStack that crawls airline websites to generate flight itinerary data across major carriers.',
-      tech: ['C#', 'JavaScript'],
-      status: 'Completed',
-      impact: '~80% success rate on scrape attempts',
-    },
-    {
-      id: 6,
-      title: 'AI-Assisted Development Initiative',
-      description: 'Pioneered adoption of AI coding assistants (Claude, GitHub Copilot) across the TrackInsight engineering team, transforming development workflows and accelerating feature delivery.',
-      tech: ['Claude', 'GitHub Copilot', 'AI Integration'],
-      status: 'Live',
-      impact: 'Team-wide productivity boost',
-    },
-    {
       id: 7,
       title: 'Sonnet Insurance Quoting Platform',
       description: 'Developed and enhanced the home and auto insurance quoting application at Definity Financial, implementing A/B testing and improving conversion rates through user experience optimizations.',
@@ -92,7 +68,7 @@ export default function Portfolio() {
       {/* Terminal Header */}
       <div className="mb-12">
         <h1 className="text-3xl md:text-4xl font-bold text-terminal-green mb-2">
-          $ ls projects/
+          Portfolio
         </h1>
         <p className="text-terminal-text/60 mt-4">
           Key projects and achievements from my 13+ years in software engineering—from FinTech platforms to AI adoption initiatives.
@@ -161,26 +137,6 @@ export default function Portfolio() {
             )}
           </div>
         ))}
-      </div>
-
-      {/* Key Metrics Section */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
-        <div className="border border-terminal-green/30 rounded-lg p-4 bg-terminal-bg/30 text-center">
-          <div className="text-2xl font-bold text-terminal-green mb-1">50K+</div>
-          <div className="text-xs text-terminal-text/60">Users Migrated</div>
-        </div>
-        <div className="border border-terminal-green/30 rounded-lg p-4 bg-terminal-bg/30 text-center">
-          <div className="text-2xl font-bold text-terminal-cyan mb-1">2K+</div>
-          <div className="text-xs text-terminal-text/60">Weekly New Users</div>
-        </div>
-        <div className="border border-terminal-green/30 rounded-lg p-4 bg-terminal-bg/30 text-center">
-          <div className="text-2xl font-bold text-terminal-yellow mb-1">60%</div>
-          <div className="text-xs text-terminal-text/60">Test Coverage Increase</div>
-        </div>
-        <div className="border border-terminal-green/30 rounded-lg p-4 bg-terminal-bg/30 text-center">
-          <div className="text-2xl font-bold text-terminal-green mb-1">50%</div>
-          <div className="text-xs text-terminal-text/60">Faster Transaction Times</div>
-        </div>
       </div>
 
       {/* Additional Info */}
