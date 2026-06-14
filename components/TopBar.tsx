@@ -62,24 +62,24 @@ export default function TopBar() {
           </div>
 
           {/* Social Links */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-4">
             <a
               href="https://github.com/k1kuma"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-accent transition-colors"
+              className="text-terminal-text/70 hover:text-terminal-green hover:scale-110 transition-all duration-200"
               aria-label="GitHub"
             >
-              <FaGithub className="w-5 h-5" />
+              <FaGithub className="w-6 h-6" />
             </a>
             <a
               href="https://www.linkedin.com/in/mattkikuchi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-accent transition-colors"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="w-5 h-5" />
+              <FaLinkedin className="w-6 h-6" />
             </a>
           </div>
         </div>

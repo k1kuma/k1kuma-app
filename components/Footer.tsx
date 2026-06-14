@@ -4,26 +4,43 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="md:hidden fixed bottom-0 left-0 right-0 z-50 backdrop-blur-md bg-terminal-bg/90 border-t border-terminal-green/20">
-      <div className="flex items-center justify-center space-x-6 h-16">
-        <a
-          href="https://github.com/k1kuma"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-terminal-text/70 hover:text-terminal-accent transition-colors"
-          aria-label="GitHub"
-        >
-          <FaGithub className="w-6 h-6" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/mattkikuchi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-terminal-text/70 hover:text-terminal-accent transition-colors"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin className="w-6 h-6" />
-        </a>
+    <footer className="mt-auto border-t border-terminal-green/20 bg-terminal-bg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between py-8 gap-4">
+          {/* Copyright */}
+          <div className="text-terminal-text/60 text-sm">
+            © {new Date().getFullYear()} Matt Kikuchi. All rights reserved.
+          </div>
+          
+          {/* Social Links */}
+          <div className="flex items-center space-x-6">
+            <a
+              href="https://github.com/k1kuma"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-terminal-text/70 hover:text-terminal-green hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              aria-label="GitHub"
+            >
+              <FaGithub className="w-6 h-6" />
+              <span className="hidden sm:inline text-sm">GitHub</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mattkikuchi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin className="w-6 h-6" />
+              <span className="hidden sm:inline text-sm">LinkedIn</span>
+            </a>
+          </div>
+          
+          {/* Built with */}
+          <div className="text-terminal-text/60 text-sm">
+            Built with <span className="text-terminal-cyan">Next.js</span> & <span className="text-terminal-cyan">TypeScript</span>
+          </div>
+        </div>
       </div>
     </footer>
   )
