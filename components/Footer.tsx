@@ -1,6 +1,6 @@
 'use client'
 
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 export default function Footer() {
   return (
@@ -34,11 +34,26 @@ export default function Footer() {
               <FaLinkedin className="w-6 h-6" />
               <span className="hidden sm:inline text-sm">LinkedIn</span>
             </a>
-          </div>
-          
-          {/* Built with */}
-          <div className="text-terminal-text/60 text-sm">
-            Built with <span className="text-terminal-cyan">Next.js</span> & <span className="text-terminal-cyan">TypeScript</span>
+            <a
+              href="https://twitter.com/k1kuma"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              aria-label="Twitter"
+            >
+              <FaTwitter className="w-6 h-6" />
+              <span className="hidden sm:inline text-sm">Twitter</span>
+            </a>
+            <a
+              href="https://instagram.com/kiku.mata"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-6 h-6" />
+              <span className="hidden sm:inline text-sm">Instagram</span>
+            </a>
           </div>
         </div>
       </div>
