@@ -18,41 +18,37 @@ export default function Footer() {
               href="https://github.com/k1kuma"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-green hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              className="text-terminal-text/70 hover:text-terminal-green hover:scale-110 transition-all duration-200"
               aria-label="GitHub"
             >
               <FaGithub className="w-6 h-6" />
-              <span className="hidden sm:inline text-sm">GitHub</span>
             </a>
             <a
               href="https://www.linkedin.com/in/mattkikuchi/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200"
               aria-label="LinkedIn"
             >
               <FaLinkedin className="w-6 h-6" />
-              <span className="hidden sm:inline text-sm">LinkedIn</span>
             </a>
             <a
               href="https://twitter.com/k1kuma"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200"
               aria-label="Twitter"
             >
               <FaTwitter className="w-6 h-6" />
-              <span className="hidden sm:inline text-sm">Twitter</span>
             </a>
             <a
               href="https://instagram.com/kiku.mata"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200 flex items-center gap-2"
+              className="text-terminal-text/70 hover:text-terminal-cyan hover:scale-110 transition-all duration-200"
               aria-label="Instagram"
             >
               <FaInstagram className="w-6 h-6" />
-              <span className="hidden sm:inline text-sm">Instagram</span>
             </a>
           </div>
         </div>
