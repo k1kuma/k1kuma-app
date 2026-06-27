@@ -17,9 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={jetbrainsMono.variable}>
-      <body className="bg-terminal-bg text-terminal-text font-mono antialiased flex flex-col min-h-screen">
+      <body className="bg-terminal-bg text-terminal-text font-mono antialiased">
         <TopBar />
-        <main className="flex-1">
+        <main>
           {children}
         </main>
         <Footer />

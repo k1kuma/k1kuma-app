@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between py-8 gap-4">
           {/* Copyright */}
           <div className="text-terminal-text/60 text-sm">
-            © {new Date().getFullYear()} Matt Kikuchi. All rights reserved.
+            © {new Date().getFullYear()} Matt Kikuchi
           </div>
           
           {/* Social Links */}

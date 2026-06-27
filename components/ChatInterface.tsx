@@ -291,7 +291,7 @@ export default function ChatInterface() {
     : 'text-terminal-text/40'
 
   return (
-    <div className="flex flex-col h-[calc(100vh-12rem)] max-h-[700px] border border-terminal-green/30 rounded-lg bg-terminal-bg/50 backdrop-blur-sm shadow-2xl">
+    <div className="flex flex-col h-[600px] border border-terminal-green/30 rounded-lg bg-terminal-bg/50 backdrop-blur-sm shadow-2xl">
       {/* Header with Clear Button */}
       {messages.length > 1 && (
         <div className="border-b border-terminal-green/20 px-4 py-2 flex justify-between items-center">
