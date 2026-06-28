@@ -105,7 +105,7 @@ function MessageContent({ content }: { content: string }) {
 export default function ChatInterface() {
   const initialMessage: Message = {
     role: 'assistant',
-    content: "Hi! I'm an AI assistant that can answer questions about Matt Kikuchi. Ask me about his experience, projects, skills, or anything else!",
+    content: "Hi! I'm an AI assistant that can answer questions about Matt Kikuchi. Ask me about his experience, projects, skills, or anything else.",
   }
 
   // Load messages from localStorage or use initial message
@@ -328,7 +328,7 @@ export default function ChatInterface() {
                 }`}
               >
                 {message.role === 'assistant' && !message.error && (
-                  <span className="text-terminal-cyan text-xs font-bold">AI:</span>
+                  <span className="text-terminal-cyan text-xs font-bold">k1kuma-bot:</span>
                 )}
                 {message.error && (
                   <span className="text-red-400 text-xs font-bold">Error:</span>
